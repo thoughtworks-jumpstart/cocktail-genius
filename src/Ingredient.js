@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import Cocktail from './Cocktail'
 
-class Cocktails extends Component {
-
-
-  handleOnClick= (idDrink) => {
-    alert (idDrink)
-  }
+class Ingredient extends Component {
+  handleOnClick = idDrink => {
+    alert(idDrink);
+  };
 
   render() {
     if (this.props.drinks.length > 0) {
@@ -29,7 +26,16 @@ class Cocktails extends Component {
           <ul>
             {sortedDrinks.map((drink, i) => {
               return (
-                <Cocktail key={i} drink={drink} />
+                <li key={i}>
+                  <button
+                    type="submit"
+                    onClick={() => {
+                      this.handleOnClick(drink.idDrink);
+                    }}
+                  >
+                    {drink.strDrink}
+                  </button>
+                </li>
               );
             })}
           </ul>
@@ -41,4 +47,4 @@ class Cocktails extends Component {
   }
 }
 
-export default Cocktails;
+export default Ingredient;

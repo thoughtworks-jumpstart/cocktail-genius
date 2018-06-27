@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Cocktails from "./Cocktails";
-import SearchBar from "./SearchBar";
+import Ingredient from "./Ingredient";
+import SearchButton from "./SearchButton";
 
 class App extends Component {
   constructor() {
@@ -33,8 +33,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SearchBar handleSubmit={this.getData} />
-        <Cocktails drinks={this.state.drinks} />
+        <SearchButton handleSubmit={this.getData} />
+        <Ingredient drinks={this.state.drinks} />
       </div>
     );
   }
