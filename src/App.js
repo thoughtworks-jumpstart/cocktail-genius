@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Ingredient from "./Ingredient";
-import SearchButton from "./SearchButton";
+import DrinksList from "./DrinksList";
+import SearchForm from "./SearchForm";
 
 class App extends Component {
   constructor() {
@@ -24,17 +24,18 @@ class App extends Component {
         drinks: data.drinks
       });
     } catch (error) {
-        this.setState ({
-            drinks: []
-        })
+      this.setState({
+        drinks: []
+      });
     }
   };
 
   render() {
     return (
       <div>
-        <SearchButton handleSubmit={this.getData} />
-        <Ingredient drinks={this.state.drinks} />
+        <h1> Drink List! </h1>
+        <SearchForm handleSubmit={this.getData} />
+        <DrinksList drinks={this.state.drinks} />
       </div>
     );
   }
